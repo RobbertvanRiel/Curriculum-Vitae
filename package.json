@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-insight-studio",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Portfolio insights app with Azure Data Lake portfolio ingestion",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check app.js"
+  }
+}
