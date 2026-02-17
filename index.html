@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Insight Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Portfolio Insight Studio</h1>
+      <p>
+        Load portfolios from Azure Data Lake, then analyze allocations by currency,
+        region, sector, and asset class. Compare factor exposures against your model
+        portfolio and MSCI World.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="card compact">
+        <h2>Portfolio Loader</h2>
+        <div class="loader-row">
+          <label for="portfolioSelect">Portfolio</label>
+          <select id="portfolioSelect"></select>
+          <button id="refreshPortfolios" class="btn secondary">Refresh</button>
+          <button id="loadPortfolio" class="btn secondary">Load portfolio</button>
+        </div>
+        <p id="sourceStatus" class="muted"></p>
+      </section>
+
+      <section class="card">
+        <h2>Holdings</h2>
+        <p class="muted">Adjust weights and attributes. Total portfolio weight should equal 100%.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Weight %</th>
+                <th>Currency</th>
+                <th>Region</th>
+                <th>Sector</th>
+                <th>Asset Class</th>
+                <th>Value</th>
+                <th>Quality</th>
+                <th>Momentum</th>
+                <th>Size</th>
+                <th>Volatility</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="holdingsBody"></tbody>
+          </table>
+        </div>
+        <button id="addHolding" class="btn secondary">+ Add holding</button>
+      </section>
+
+      <section class="card compact">
+        <h2>Benchmarks</h2>
+        <p class="muted">Reference weights and factor targets used in deviation analysis.</p>
+        <div class="benchmark-grid" id="benchmarkGrid"></div>
+      </section>
+
+      <section class="card compact">
+        <h2>Portfolio Health</h2>
+        <div id="healthSummary" class="stack"></div>
+      </section>
+
+      <section class="card">
+        <h2>Allocation Insights</h2>
+        <div class="insights-grid" id="allocationInsights"></div>
+      </section>
+
+      <section class="card">
+        <h2>Factor Exposure</h2>
+        <div id="factorInsight"></div>
+      </section>
+
+      <section class="card">
+        <h2>Deviation Flags</h2>
+        <ul id="deviationFlags" class="stack"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
